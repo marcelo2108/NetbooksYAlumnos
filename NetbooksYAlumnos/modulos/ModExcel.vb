@@ -1,4 +1,12 @@
-﻿Module ModExcel
+﻿'-----------------------------------------------------------------------------------------
+'
+'           EXCEL CONNECTION MODULE
+'           by Marcelo L. Ponce F.
+'           version: 2017.08.06 19:00
+'
+'-----------------------------------------------------------------------------------------
+
+Module ModExcel
 
     Private Function Cadena_segun_tipo_archivo(ByVal path As String) As String
 

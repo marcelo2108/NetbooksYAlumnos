@@ -24,6 +24,11 @@
                 Cargar_combo()
                 Cargar_grilla()
                 lblUltimaVersion.Text = Format(IO.File.GetLastWriteTime(path), "dd/MM/yyyy HH:mm")
+
+                If IsNothing(Request.Cookies("UltimoCursoSeleccionado")) = False Then
+                    DDL_Cursos.SelectedValue = Request.Cookies("UltimoCursoSeleccionado").Value
+                End If
+
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -130,8 +135,16 @@
 
     Private Sub DDL_Cursos_TextChanged(sender As Object, e As EventArgs) Handles DDL_Cursos.TextChanged
         Try
+
             Cargar_datos()
             Cargar_grilla()
+
+            Dim cookie As New HttpCookie("UltimoCursoSeleccionado") With {
+                .Value = DDL_Cursos.SelectedValue,
+                .Expires = DateTime.Now.AddDays(30)
+            }
+            Response.SetCookie(cookie)
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

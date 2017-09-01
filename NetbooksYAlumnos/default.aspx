@@ -36,15 +36,16 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                      <div id="Alerta" runat="server" Class="alert alert-info"><asp:Label ID="lblMensaje" runat="server" Text="Label" ></asp:Label>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      </div>
+                    <div id="Alerta" runat="server" class="alert alert-info">
+                        <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
                     <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
                         <Triggers>
                             <asp:AsyncPostBackTrigger ControlID="DDL_Cursos" />
                         </Triggers>
                         <ContentTemplate>
-                            <asp:GridView ID="gridview_Alumnos" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-hover table-condensed table-striped">
+                            <asp:GridView ID="gridview_Alumnos" runat="server" AutoGenerateColumns="False" CssClass="table table-bordered table-hover table-condensed">
                                 <Columns>
                                     <asp:TemplateField HeaderText="DOCUMENTO" ItemStyle-CssClass="col-sm-4 col-lg-1">
                                         <ItemTemplate>
@@ -78,9 +79,9 @@
                             </p>
                         </ContentTemplate>
                     </asp:UpdatePanel>
-                 
+
                 </div>
-                       
+
             </div>
             <footer>
                 <p>
@@ -88,7 +89,8 @@
                     <asp:Label ID="lblUltimaVersion" runat="server" Text=""></asp:Label>
                 </p>
                 <p>#N/A: Significa que el equipo se debe llevar para revisión a la oficina del Administrador de la Red.</p>
-                <p>Ante cualquier irregularidad por favor contactar al Administrador de la Red.</p>
+                <p>Ante cualquier otra irregularidad en los datos, por favor contactar al Administrador de la Red.</p>
+                <p>RECUERDEN QUE TODOS LOS TRAMITES SON EN PERSONA, NO PUEDEN ENVIAR A OTRO ALUMNO EN REPRESENTACIÓN.</p>
                 <hr />
                 <p>Gabinete de Informática - 2017</p>
             </footer>

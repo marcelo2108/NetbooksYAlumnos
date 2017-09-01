@@ -94,7 +94,7 @@
             End If
 
             gridview_Alumnos.DataBind()
-            lblCantidad.Text = "Cantidad: " & gridview_Alumnos.Rows.Count
+            lblCantidad.Text = "Cantidad de alumnos: " & gridview_Alumnos.Rows.Count
 
         Catch ex As Exception
             Throw
